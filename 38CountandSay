@@ -1,0 +1,14 @@
+class Solution:
+    def countAndSay(self, n: int) -> str:
+        strNum = str(n)
+        compressed = ""
+        countConsecutive = 0 
+        
+        for i in range (len(strNum)): 
+            countConsecutive+=1 
+            
+            if i+1 >= len(strNum) or strNum[i] != strNum[i+1]:
+                compressed += str(countConsecutive) + strNum[i]
+                countConsecutive=0
+        
+        return compressed
