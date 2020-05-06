@@ -1,0 +1,13 @@
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        list = []
+        if x < 0: 
+            return False
+        
+        for i in str(x):
+            list.append(int(i))
+            
+        if list == list[::-1]:
+            return True 
+        else: 
+            return False

@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int target) {
+        
+        //Declare a counter variable that would return the index of 'found' target
+        int counter = 0; 
+        
+        //Target less than everything in the list 
+        if (target < nums[0])
+            return counter; 
+        
+        //While loop that will find the spot 
+        while (nums[counter] < target && counter < nums.size()-1){
+            counter ++; 
+        }
+        
+        //Return the index when existing the loop 
+        if (nums[counter] == target) //Found target in the list 
+            return counter; 
+        else if (target < nums [counter]) //Last item is greater than missing target 
+            return counter; 
+        else if (target > nums[counter]) //Last item is less than missing target 
+            return counter+1; 
+        else 
+            return counter; 
+        }
+};
